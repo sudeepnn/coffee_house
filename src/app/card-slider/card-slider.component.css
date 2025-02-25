@@ -1,0 +1,14 @@
+@media (min-width: 768px) {
+    .opacity-60 {
+      opacity: 0.6;
+    }
+  
+    .scale-95 {
+      transform: scale(0.95);
+    }
+  
+    .scale-105 {
+      transform: scale(1.05);
+    }
+  }
+  

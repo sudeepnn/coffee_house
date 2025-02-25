@@ -1,0 +1,27 @@
+<div class="bg-black text-white py-10 px-6 text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-bold mb-2">Our Happy Customers</h2>
+    <p class="text-lg text-gray-300 mb-6">What they say about us</p>
+  
+    <!-- Review Card -->
+    <div class="relative w-full max-w-lg mx-auto overflow-hidden">
+      <div class="flex transition-transform duration-700 ease-in-out"
+           [ngStyle]="{'transform': 'translateX(-' + (currentReviewIndex * 100) + '%)'}">
+        <div *ngFor="let review of reviews" class="min-w-full bg-gray-900 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center">
+          <img [src]="review.img" alt="{{ review.name }}" class="w-16 h-16 rounded-full mb-4 border-2 border-red-500">
+          <h3 class="text-xl font-semibold">{{ review.name }}</h3>
+          <p class="text-yellow-400">⭐️⭐️⭐️⭐️⭐️</p>
+          <p class="mt-2 text-gray-300 italic">"{{ review.text }}"</p>
+        </div>
+      </div>
+  
+      <!-- Navigation Buttons -->
+      <button (click)="prevReview()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white">
+        ❮
+      </button>
+      <button (click)="nextReview()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white">
+        ❯
+      </button>
+    </div>
+  </div>
+  

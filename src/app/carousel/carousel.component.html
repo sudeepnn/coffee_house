@@ -1,0 +1,20 @@
+<div class="relative w-full max-w-lg mx-auto overflow-hidden">
+    <!-- Slides -->
+    <div class="flex transition-transform duration-700 ease-in-out"
+         [ngStyle]="{'transform': 'translateX(-' + (currentSlideIndex * 100) + '%)'}">
+      <div *ngFor="let slide of slides" class="min-w-full flex flex-col items-center justify-center bg-black text-white p-10 rounded-lg shadow-lg">
+        <img [src]="slide.img" alt="{{ slide.title }}" class="w-20 h-20 mb-4">
+        <h3 class="text-xl font-bold">{{ slide.title }}</h3>
+        <p class="text-2xl font-semibold">{{ slide.value }}</p>
+      </div>
+    </div>
+  
+    <!-- Navigation Buttons -->
+    <button (click)="prevSlide()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white">
+      ❮
+    </button>
+    <button (click)="nextSlide()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white">
+      ❯
+    </button>
+  </div>
+  

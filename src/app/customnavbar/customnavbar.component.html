@@ -1,0 +1,46 @@
+<header class="bg-black text-white p-4 flex justify-between items-center">
+    <!-- Left: Social Media Icons -->
+    <div class="flex space-x-4">
+      <!-- <a href="#" class="hover:text-gray-400"><img src="images/facebook.png" class="h-5 w-5" alt="facebook"></a> -->
+      <a href="https://www.instagram.com/t.coffee.house" class="hover:text-gray-400"><img src="images/instagram.png" class="h-5 w-5" alt="instagram"></a>
+      <a [href]="getWhatsAppLink()" class="hover:text-gray-400"><img src="images/whatsapp.png" class="h-5 w-5" alt="whatsapp"></a>
+    </div>
+  
+    <!-- Center: Logo -->
+    <div class="text-xl font-bold">
+      <img src="images/logomain.png" alt="Logo" class="h-15 w-15 md:h-20 md:w-20 object-contain">
+    </div>
+  
+    <!-- Right: Navigation Links (Hidden on Mobile) -->
+    <nav class="hidden md:flex space-x-4">
+      <!-- <a href="#" class="hover:text-gray-400">Home</a> -->
+      <a href="#menu" class="hover:text-gray-400">Menu</a>
+      <a href="#Gallery" class="hover:text-gray-400">Gallery</a>
+      <a href="#about" class="hover:text-gray-400">About us</a>
+      <!-- <a href="#" class="hover:text-gray-400">News & Media</a> -->
+    </nav>
+  
+    <!-- Mobile Menu Button -->
+    <button (click)="toggleSidebar()" class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </header>
+  
+  <!-- Black Overlay -->
+  <div class="fixed inset-0 bg-black" *ngIf="isSidebarOpen" (click)="toggleSidebar()"></div>
+  
+  <!-- Sidebar (Mobile) -->
+  <aside [ngClass]="{'translate-x-0': isSidebarOpen, '-translate-x-full': !isSidebarOpen}"
+         class="fixed top-0 left-0 h-full w-64 bg-black text-white shadow-md transform transition-transform md:hidden z-50">
+    <button (click)="toggleSidebar()" class="p-4 block text-right">✖</button>
+    <nav class="p-4 flex flex-col space-y-4">
+      <a href="#" class="hover:bg-gray-700   rounded">Home</a>
+      <a href="#menu" class="hover:text-gray-400">Menu</a>
+      <a href="#Gallery" class="hover:text-gray-400">Gallery</a>
+      <a href="#about" class="hover:text-gray-400">About us</a>
+      <!-- <a href="#" class="hover:bg-gray-700 p-2 rounded">News & Media</a> -->
+    </nav>
+  </aside>
+  
